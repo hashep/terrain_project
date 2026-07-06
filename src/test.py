@@ -10,8 +10,10 @@ from model import get_model
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    image_path = "C:/Anaconda/terrain_project/data/images/image.jpg"
-    model_path = "C:/Anaconda/terrain_project/model/model_epoch_50.pth"
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    image_path = os.path.join(BASE_DIR, "data", "images", "image.jpg")
+    model_path = os.path.join(BASE_DIR, "model", "model_epoch_50.pth")
     num_classes = 9
 
     original_image = Image.open(image_path).convert("RGB")

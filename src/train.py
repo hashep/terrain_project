@@ -12,8 +12,10 @@ from PIL import Image
 def main():
     set_seed(42)
 
-    image_dir = "C:/Anaconda/terrain_project/data/images"
-    mask_dir = "C:/Anaconda/terrain_project/data/masks"
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    image_dir = os.path.join(BASE_DIR, "data", "images")
+    mask_dir = os.path.join(BASE_DIR, "data", "masks")
     num_classes = 9
     batch_size = 8
     epochs = 50
